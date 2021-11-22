@@ -1,0 +1,311 @@
+#headerContainer {
+  width: 100vw;
+  height: 7vh;
+  background-color: rgb(209, 91, 22);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+}
+
+.heading {
+  font-size: 24px;
+  color: #fff;
+}
+
+.mainSection {
+  width: 90vw;
+  margin: auto;
+}
+
+.inputSectionArea {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+#totalCalories {
+  line-height: 30px;
+  font-size: 16px;
+}
+
+label[for="search"] {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+
+.searchArea {
+  margin: 20px;
+}
+
+input {
+  width: 300px;
+  padding: 4px;
+  outline: none;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  font-size: 16px;
+}
+
+label {
+  font-size: 16px;
+}
+
+.newFoodArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#newFood {
+  color: #fff;
+  background-color: rgb(235, 86, 0);
+  border: none;
+  outline: none;
+  padding: 3px 14px;
+  margin-bottom: 10px;
+}
+
+#displayContainer {
+  border: 1px solid black;
+  border-radius: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  padding: 50px;
+  justify-content: center;
+  align-content: center;
+}
+
+.foodDisplay {
+  width: 90%;
+  background-color: rgb(243, 243, 243);
+  box-shadow: 3px 4px 7px rgb(104, 104, 104);
+  padding: 20px;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.imageSection {
+  width: 150px;
+  height: auto;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.foodDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 70px;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.quantity input {
+  width: 200px;
+  margin-right: 20px;
+}
+
+.addQuantity {
+  padding: 5px 10px;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgb(235, 86, 0);
+  border: none;
+  outline: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .imageSection {
+    width: 70px;
+    height: auto;
+  }
+
+  .foodDetails {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  #headerContainer {
+    padding: 10px;
+  }
+  
+  .heading {
+    font-size: 22px;
+  }
+
+  .inputSectionArea {
+    padding: 15px;
+  }
+  
+  #totalCalories {
+    line-height: 25px;
+  }
+  
+  label[for="search"] {
+    font-size: 14px;
+    padding-bottom: 7px;
+  }
+  
+  .searchArea {
+    margin: 10px;
+  }
+  
+  input {
+    width: 280px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+  
+  label {
+    font-size: 14px;
+  }
+  
+  .newFoodArea {
+    margin-left: 10px;
+  }
+  
+  #displayContainer {
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+  }
+  
+  .foodDisplay {
+    width: 90%;
+    padding: 5px;
+    margin: 5px;
+    font-size: 14px;
+  }
+  
+  .imageSection {
+    width: 50px;
+    height: auto;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  
+  .foodDetails {
+    margin-left: 30px;
+    line-height: 20px;
+  }
+  
+  .quantity input {
+    width: 50px;
+    margin-right: 5px;
+  }
+  
+  .addQuantity {
+    font-size: 10px;
+    padding: 5px;
+  } 
+}
+
+@media screen and (max-width: 426px) {
+  #headerContainer {
+    padding: 7px;
+  }
+  
+  .heading {
+    font-size: 20px;
+  }
+
+  .inputSectionArea {
+    padding: 10px;
+  }
+  
+  #totalCalories {
+    line-height: 20px;
+  }
+  
+  label[for="search"] {
+    font-size: 12px;
+    padding-bottom: 7px;
+  }
+  
+  .searchArea {
+    margin: 10px;
+  }
+  
+  input {
+    width: 280px;
+    padding: 2px;
+    outline: none;
+    border: 1px solid black;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+  
+  label {
+    font-size: 12px;
+  }
+  
+  .newFoodArea {
+    margin-left: 20px;
+  }
+  
+  #displayContainer {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .quantityField {
+    font-size: 10px;
+  }
+  
+  .foodDisplay {
+    width: 90%;
+    padding: 5px;
+    margin: 5px;
+    font-size: 10px;
+  }
+  
+  .imageSection {
+    width: 50px;
+    height: auto;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  
+  .foodDetails {
+    margin-left: 30px;
+    line-height: 20px;
+  }
+  
+  .quantity input {
+    width: 50px;
+    margin-right: 5px;
+  }
+  
+  .addQuantity {
+    font-size: 10px;
+    padding: 5px;
+  }
+  
+}
