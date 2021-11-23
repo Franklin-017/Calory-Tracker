@@ -7,18 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FoodListComponent implements OnInit {
   
-  foodList: Array<any> = [{
-    name: 'apple',
-    calories: 240,
-    image: '',
-    quantity: 100,
-  }];
+  foodList: Array<any> = [];
   newFoodArray: Array<any> = [];
   searchItem: string = '';
   name: string = '';
   calories: number = 0;
   image: string = '';
-  quantity: number = 1;
+  quantity: number = 0;
   quantityAdded: number = 0;
   constructor() { }
 
@@ -26,10 +21,8 @@ export class FoodListComponent implements OnInit {
   }
   addFood() {
     let addedFood:any = {};
-    var valueArr = this.foodList.map(function(item){ return item.name });
-    var isDuplicate = valueArr.some(function(item, idx){ 
-        return valueArr.indexOf(item) != idx 
-    });
+    let valueArr = this.foodList.map(function(item){ return item.name });
+    let isDuplicate = valueArr.includes(this.name);
     
     if (this.name && this.calories && this.image && !isDuplicate) {
       addedFood.name = this.name;
@@ -38,6 +31,8 @@ export class FoodListComponent implements OnInit {
       addedFood.quantity = this.quantity;
       addedFood.image = this.image;
       this.foodList.push(addedFood);
+    } else {
+
     }
   }
 
@@ -49,13 +44,7 @@ export class FoodListComponent implements OnInit {
     })
   }
 
-  searchFood() {
-    let tempArray = this.foodList;
-    let filterdeArray;
-    this.foodList = tempArray;
-    if(this.searchItem !== '') {
-      filterdeArray = this.foodList.filter(item => item.name === this.searchItem);
-      this.foodList = filterdeArray;
-    }
+  setQuantity(event: any) {
+    this.quantityAdded = event.target.value;
   }
 }

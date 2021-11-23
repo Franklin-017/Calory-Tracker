@@ -7,7 +7,7 @@
       <div class="inputArea">
         <div class="searchArea">
           <label for="search">Search</label>
-          <input type="text" [(ngModel)]="searchItem" id="searchBox" name="search" (change)="searchFood()">
+          <input type="text" [(ngModel)]="searchItem" id="searchBox" name="search">
         </div>
         <div class="newFoodArea">
           <button id="newFood" (click)="addFood()">Add New Food</button>
@@ -30,11 +30,11 @@
       <div id="totalCalories">
         <h2>Today's Foods 2021 cal</h2>
         <div *ngFor="let item of foodList">
-          <li>{{ item.name }} - {{ item.calories }} x {{ item.quantity }}</li> 
+          <li *ngIf="item.quantity !== 0">{{ item.name }} - {{ item.calories }} x {{ item.quantity }}</li> 
         </div>
       </div>
     </div>
-    <div id="displayContainer">
+    <div id="displayContainer" *ngIf="foodList.length">
       <div class="foodDisplay" *ngFor="let item of foodList | searchFilter: searchItem">
         <div class="imageSection">
           <img src="{{ item.image }}" alt="{{ item.name }}">
@@ -44,8 +44,8 @@
           <div class="foodCalories">Calory - {{ item.calories }}</div>
           <div class="foodCalories">Quantity - {{ item.quantity }}</div>
           <div class="quantity">
-            <input type="text" class="quantityField" [(ngModel)]="quantityAdded">
-            <button class="addQuantity" (click)="addQuantity(item.name)">Add</button>
+            <input type="text" class="quantityField" #quantityAdded (input)="setQuantity($event)">
+            <button class="addQuantity" (click)="quantityAdded.value = ''" (click)="addQuantity(item.name)">Add</button>
           </div>
         </div>
       </div>
